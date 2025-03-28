@@ -15,4 +15,7 @@ export default defineConfig([
     extends: ['js/recommended'],
   },
   tseslint.configs.recommended,
+  {
+    ignores: ['**/node_modules/**', '**/dist/**'],
+  },
 ]);
