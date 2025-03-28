@@ -4,10 +4,12 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
+    "format": "prettier --write .",
     "start": "tsc && node dist/index.js",
     "lint": "eslint . --ext .ts",
     "dev": "nodemon --watch src --exec ts-node src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -22,17 +24,24 @@
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.1",
     "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.5",
     "globals": "^16.0.0",
+    "husky": "^9.1.7",
     "nodemon": "^3.1.9",
+    "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.28.0"
   },
   "dependencies": {
+    "@langchain/community": "^0.3.37",
     "@langchain/openai": "^0.5.0",
     "@supabase/supabase-js": "^2.49.3",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "langchain": "^0.3.19",
+    "youtubei.js": "^13.3.0"
   }
 }
