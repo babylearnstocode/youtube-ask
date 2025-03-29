@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import storeDocumentRoute from './routes/storeDocumentRoutes';
+import queryDocumentRoute from './routes/queryDocumentRoutes';
 
 const app = express();
 
@@ -14,4 +15,5 @@ app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/store-document', storeDocumentRoute);
+app.use('/query-document', queryDocumentRoute);
 export default app;

@@ -9,8 +9,6 @@ export async function storeDocumentService(req: Request) {
   try {
     const { url, documentId } = req.body;
 
-    console.log(`Storing document with ID: ${documentId} and URL: ${url}`);
-
     const supabase = createSupabaseClient();
     const embeddings = new OpenAIEmbeddings({
       model: 'text-embedding-3-large',
