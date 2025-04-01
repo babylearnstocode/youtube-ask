@@ -39,7 +39,7 @@ export async function queryDocumentService(req: Request) {
     });
 
     const llm = new ChatOpenAI({
-      model: 'gpt-4o-mini',
+      model: 'gpt-4o',
       apiKey: process.env.OPENAI_API_KEY,
       streamUsage: true,
     });
@@ -54,7 +54,7 @@ export async function queryDocumentService(req: Request) {
     });
     // 5. Change the prompt based on the query and chat history
     const contextualizeQSystemPrompt =
-      'Given a chat hisotry and the latest user question, ' +
+      'Given a chat history and the latest user question, ' +
       'which might reference context in the chat history, ' +
       'formulate a standalone question which can be unterstood. ' +
       'without the chat history. DO NOT answer the question' +
@@ -75,7 +75,7 @@ export async function queryDocumentService(req: Request) {
     });
     // 7. Pass those relevant documents to the LLM
     const systemPrompt =
-      'You are an assiastant for question-answering tasks. ' +
+      'You are an assistant for question-answering tasks. ' +
       'Use the following pieces of retrieved context to answer the question. ' +
       '\n\n' +
       '{context}';
