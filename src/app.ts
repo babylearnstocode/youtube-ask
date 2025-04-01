@@ -9,9 +9,11 @@ const app = express();
 const corsOptions = {
   origin: [
     'https://rag-client-sage.vercel.app/',
+    'https://rag-client-sage.vercel.app',
+    `https://${process.env.EC2_CADDY_HOST}/`,
     `https://${process.env.EC2_CADDY_HOST}`,
   ],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 app.use(cors(corsOptions));
