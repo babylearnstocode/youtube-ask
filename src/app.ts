@@ -7,7 +7,10 @@ import queryDocumentRoute from './routes/queryDocumentRoutes';
 const app = express();
 
 const corsOptions = {
-  origin: 'https://rag-client-sage.vercel.app',
+  origin: [
+    'https://rag-client-sage.vercel.app/',
+    `https://${process.env.EC2_CADDY_HOST}`,
+  ],
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
